@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-card 
-          v-bind:title="{posttitle}"
+          v-bind:title="posttitle"
         >
           <b-card-text>
             {{message}}
@@ -15,7 +15,10 @@
 <script>
 export default {
     name: "DataCard",
-    props: ['posttitle', 'message']
+    props: {
+      posttitle: String, 
+      message: String
+    }
 }
 </script>
 

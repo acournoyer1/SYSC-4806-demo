@@ -4,9 +4,12 @@
             <b-navbar-brand href="#">{{ Title }}</b-navbar-brand>
         </b-navbar>
 
-        <DataCard 
-          posttitle="HeeeHeee"
-          message="Wow this will be a fun one to read"
+
+        <data-card
+          v-for="item in items"
+          v-bind:key="item.id"
+          v-bind:posttitle="item.posttitle"
+          v-bind:message="item.message"
         />
   </div>
 </template>
@@ -20,7 +23,19 @@ export default {
   },
   data () {
     return {
-      Title: "Demo Boi"
+      Title: "Demo Boi",
+      items: [
+        {
+          id:1,
+          posttitle: "HeeHee",
+          message: "Let's talk about how Michael Jackson laughs"
+        },
+        {
+          id:2,
+          posttitle: "My Journey to India",
+          message: "Lets talk about the land of spicy food"
+        }
+      ]
     }
   }
 }
