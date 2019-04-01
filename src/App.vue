@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-       <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar toggleable="lg" type="dark" variant="info">
             <b-navbar-brand href="#">{{ Title }}</b-navbar-brand>
         </b-navbar>
 
@@ -11,19 +11,35 @@
           v-bind:posttitle="item.posttitle"
           v-bind:message="item.message"
         />
+
+        <b-navbar toggleable="lg" type="dark" variant="info">
+            <b-navbar-brand href="#">{{ Title2 }}</b-navbar-brand>
+        </b-navbar>
+
+        <Display />
+        <Sender />
+
+
+
   </div>
 </template>
 
 <script>
 import DataCard from './components/DataTab.vue'
+import Sender from './components/Sender.vue'
+import Display from './components/Display.vue'
+
 export default {
   name: 'app',
   components: {
-    DataCard
+    DataCard,
+    Sender,
+    Display
   },
   data () {
     return {
-      Title: "Demo Boi",
+      Title: "Demo Part 1",
+      Title2: "Demo Part 2",
       items: [
         {
           id:1,
